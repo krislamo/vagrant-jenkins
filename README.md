@@ -80,7 +80,16 @@ Usage
 
 The default Jenkins website will be available at
 
-    http://ci.jenkins.vm:9191/
+    http://ci.jenkins.vm:9181/
+
+Shell access to the guest VM
+
+    vagrant ssh master
+
+The `/vagrant` directory on the guest is mounted from the hosts's
+Vagrant project directory so its contents persist across recreation of
+the guest VM. The `scratch` directory is excluded from git so is a good
+place to place persistent, non-versioned data.
 
 Setup and Configuration
 =======
