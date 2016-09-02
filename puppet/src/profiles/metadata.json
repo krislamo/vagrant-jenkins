@@ -9,7 +9,11 @@
   "issues_url": null,
   "dependencies": [
     {"name":"ebrc/ebrc_jenkins"},
-    {"name":"crayfishx/firewalld"}
+    {"name":"crayfishx/firewalld"},
+    {"name":"ebrc/ebrc_yum_repo"},
+    {"name":"ebrc/ebrc_java"},
+    {"name":"puppetlabs/stdlib"},
+    {"name":"jlambert121/trusted_ca"}
   ]
 }
 

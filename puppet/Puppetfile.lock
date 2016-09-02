@@ -9,8 +9,6 @@ FORGE
       puppetlabs-stdlib (< 5.0.0, >= 4.2.0)
     puppetlabs-java_ks (1.4.1)
     puppetlabs-stdlib (4.12.0)
-    stahnma-epel (1.2.2)
-      puppetlabs-stdlib (>= 3.0.0)
 
 GIT
   remote: git@github.com:EuPathDB/puppet-ebrc_java.git
@@ -22,9 +20,10 @@ GIT
 GIT
   remote: git@github.com:EuPathDB/puppet-ebrc_jenkins.git
   ref: master
-  sha: 133ce0f678faa7af1a3a2a743c67baba09adee20
+  sha: a31c44dc36dd8edd1235ee0e66f19fd37da6db01
   specs:
-    ebrc-ebrc_jenkins (0.0.1)
+    ebrc-ebrc_jenkins (0.1.0)
+      puppet-archive (>= 0)
 
 GIT
   remote: git@github.com:EuPathDB/puppet-ebrc_yum_repo.git
@@ -39,7 +38,11 @@ PATH
   specs:
     local-profiles (0.0.0)
       crayfishx-firewalld (>= 0)
+      ebrc-ebrc_java (>= 0)
       ebrc-ebrc_jenkins (>= 0)
+      ebrc-ebrc_yum_repo (>= 0)
+      jlambert121-trusted_ca (>= 0)
+      puppetlabs-stdlib (>= 0)
 
 DEPENDENCIES
   crayfishx-firewalld (>= 0)
@@ -51,5 +54,4 @@ DEPENDENCIES
   puppet-archive (>= 0)
   puppetlabs-java_ks (>= 0)
   puppetlabs-stdlib (>= 0)
-  stahnma-epel (>= 0)
 
