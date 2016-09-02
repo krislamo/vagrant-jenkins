@@ -1,0 +1,21 @@
+forge 'https://forgeapi.puppetlabs.com'
+
+mod 'crayfishx/firewalld'
+mod 'jlambert121/trusted_ca'
+mod 'puppet/archive'
+mod 'puppetlabs/java_ks'
+mod 'puppetlabs/stdlib'
+mod 'stahnma/epel'
+
+mod 'ebrc/ebrc_yum_repo',
+  :git => 'git@github.com:EuPathDB/puppet-ebrc_yum_repo.git'
+
+mod 'ebrc/ebrc_java',
+  :git => 'git@github.com:EuPathDB/puppet-ebrc_java.git'
+
+mod 'ebrc/ebrc_jenkins',
+  :git => 'git@github.com:EuPathDB/puppet-ebrc_jenkins.git'
+
+mod 'local/profiles',
+  :path => './src/profiles'
+  :latest

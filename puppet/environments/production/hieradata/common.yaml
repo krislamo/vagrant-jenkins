@@ -1,0 +1,19 @@
+---
+ebrc_jenkins::user_home: /usr/local/home/jenkins
+ebrc_jenkins::instances:
+  CI:
+    version: 1.638
+    http_port: 9181
+    jmx_port:  9120
+
+ebrc_ca::cacert: apidb-ca-rsa.crt
+ebrc_java::java_home: /usr/java/jdk1.8.0_92
+ebrc_java::packages:
+  - jdk1.8.0_92
+ebrc_java::java_home: /usr/java/jdk1.8.0_92
+ebrc_java::default_ver: /usr/java/jdk1.8.0_92
+
+java_keystore_target: /etc/pki/tls/certs/cacerts
+java_keystore_passwd: graeo5locza
+
+local_home: /usr/local/home
