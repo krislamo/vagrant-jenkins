@@ -99,6 +99,31 @@ that module's documentation at
 https://github.com/EuPathDB/puppet-ebrc_jenkins for details.
 
 
+`ebrc_jenkins` Puppet module development
+=======
+
+A primary use case for this project is for development on the
+[`ebrc_jenkins`](https://github.com/EuPathDB/puppet-ebrc_jenkins) Puppet
+module. Before editing code in `puppet/modules/ebrc_jenkins` be aware of
+how Vagrant is managing all the puppet requirements.
+
+This project uses the Vagrant `vagrant-librarian-puppet` plugin to
+manage module dependencies.  Librarian's default behavior is to delete
+and repopulate the `puppet/modules` directory. Obviously puts
+uncommitted `ebrc_jenkins` module code at risk. To temporarily disable
+this default behavior, `touch nolibrarian` in the same directory as the
+`Vagrantfile`. With this file in place, librarian will not remove your
+uncommitted code. Remove the `nolibrarian` file to restore the behavior
+(just be sure to `git commit` first).
+
+Note that librarian clones a specific git commit of `ebrc_jenkins` that
+is detached from HEAD. You should correct this before developing on the
+module so you will be able to commit your changes.
+
+When restoring librarian, you typically will need to remove
+`Puppetfile.lock` so it will be regenerated with the latest commit
+version of `ebrc_jenkins`.
+
 Manual Puppet Run
 =======
 
