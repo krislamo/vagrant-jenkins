@@ -2,6 +2,7 @@
 # for EuPathDB
 class profiles::ebrc_jenkins {
 
+    include ::profiles::base
     include ::profiles::ebrc_java_stack
     include ::profiles::local_home
     include ::ebrc_jenkins
