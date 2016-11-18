@@ -97,7 +97,7 @@ Setup and Configuration
 For most use cases no configuration is needed.
 
 Jenkins is provisioned using Puppet using adjustable parameters defined
-in the Hiera file `puppet/environments/production/hieradata/common.xml`
+in the Hiera file `puppet/environments/production/hieradata/common.yaml`
 
 The configuration changes you may be interested in include the Jenkins
 version and network ports that the server listens on. These are defined
