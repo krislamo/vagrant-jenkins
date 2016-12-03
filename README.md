@@ -107,6 +107,62 @@ The most important Puppet module in play here is `ebrc_jenkins` so see
 that module's documentation at
 https://github.com/EuPathDB/puppet-ebrc_jenkins for details.
 
+Example Node Setup
+=======
+
+You can run jobs on the master but you may want to run jobs on a
+separate node, especially if you have separate VM that is already
+provisioned with the software dependencies of your jobs.
+
+This guideline connects the Jenkins master to a node on another Vagrant
+box. This example uses the
+[vagrant-webdev](http://github.com/mheiges/vagrant-webdev) project with
+hostname `webdev.vm.apidb.org`and calls the node by hostname so the
+Jenkins master needs to be able to resolve that either by using the
+Vagrant Landrush plugin or by managing the `/etc/hosts` file. If you are
+not using the webdev VM or similar you will need to adjust accordingly,
+including possibly needing to provision a user account for Jenkins slave
+processes.
+
+First create an ssh key on the Jenkins master by running the following
+Linux commands in a Jenkins VM terminal.
+
+        sudo su - jenkins
+        cd
+        mkdir .ssh
+        chmod 700 .ssh
+        cd .ssh
+        ssh-keygen -f id_rsa -t rsa -N ''
+        cat id_rsa.pub
+        exit
+
+Copy/paste the output of `cat id_rsa.pub` to
+`~joeuser/.ssh/authorized_keys` on the webdev VM. This grants the
+Jenkins master authorization to ssh to the `joeuser` account on the
+node. Jobs running on the node will run as this user.
+
+Next, use Jenkins' web interface to add a configure the node.
+
+*UI Navigation Guidance for Add Node.*
+
+        Manage Jenkins
+          Manage Nodes
+            New Nodes
+              Name: webdev <or your choice>
+              # of executors 1 <or your choice>
+              Remote root directory /var/tmp <or your choice>
+              Launch method: Launch slave agents on Unix machines via SSH
+              Host: webdev.vm.apidb.org
+              Credentials: joeuser <see next Guidance below for adding joeuser>
+              <remaining options can be left empty for now>
+
+*Guidance for Add Credentials.*
+
+          Scope: System
+          Username: joeuser
+          Passphrase: <blank>
+          Id: <blank>
+          Description: <your choice>
 
 `ebrc_jenkins` Puppet module development
 =======
