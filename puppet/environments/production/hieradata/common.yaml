@@ -2,7 +2,7 @@
 ebrc_jenkins::user_home: /usr/local/home/jenkins
 ebrc_jenkins::instances:
   CI:
-    version: 2.46.1
+    version: 2.55
     http_port: 9181
     jmx_port:  9120
 
