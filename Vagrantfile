@@ -1,5 +1,5 @@
 BOX = 'ebrc/centos-7-64-puppet'
-BOX_URL = ''
+BOX_URL = 'http://software.apidb.org/vagrant/centos-7-64-puppet.json'
 TLD = 'jenkins.vm'
 
 JENKINS_HOSTS = {
